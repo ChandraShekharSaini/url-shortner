@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import user from '../models/user.js';
 import URL from '../models/userSchema.js';
 import { v4 as uuidv4 } from 'uuid';
-import { setUser } from '../Services/auth.js';
+
 
 const signup = async (req, res) => {
   try {
