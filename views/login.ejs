@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        .div{
+            justify-self: center;
+        }
+        body{
+            font-family: Segoe UI;
+            /* background-color: aqua; */
+        }
+        .input{
+            border:none;
+            border-bottom:2px solid rgb(26, 23, 23);
+            outline: none;
+            padding: 5px;
+            background: transparent;
+        }
+        .input:hover{
+
+            border-top-style: none;
+            border-right-style: none;
+            border-left-style: none;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <h1 style="font-size: 3rem">Login</h1>
+        <form class="form" method="POST" action="/user/login/home">
+            <label for="l" style="font-size: 1.5rem;" >Email</label><br><br>
+            <input type="text" placeholder="Enter your email" name="email" class="input" style="font-size: 1.5rem; width: 24rem;"> <br><br>
+            <label for="l" style="font-size: 1.5rem;">Password</label><br><br>
+            <input type="text" placeholder="Enter your password" name="password" class="input" style="font-size: 1.5rem; width: 24rem;">
+            <button type="submit" style="font-size:1.5rem">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+
+    <style>
+        body {
+            font-family: Segoe UI;
+        }
+
+        .h1 {
+
+            color: white;
+            font-size: 8rem;
+            text-shadow: -2px -2px 0 aqua, 4px -1px 0 aqua, -2px 2px 0 aqua, 2px 2px 0 aqua;
+        }
+
+
+        .div-ch {
+
+            justify-self: center;
+        }
+
+        .small {
+            justify-self: center;
+            font-size: 1.5rem;
+        }
+
+        .form {
+            justify-self: center;
+            font-size: 1.5rem;
+        }
+
+        .input {
+            width: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div-ch">
+        <h1 class="h1" class="text-blur">URL Shortner</h1>
+        <div class="form">
+           
+            <% if (locals.sparshid) { %>
+
+            <h4>Generating URL : http://localhost:8006/url/<%= sparshid %></h4>  
+
+           <a href="/"><button >back to home </button></a>
+
+            <% } %>
+                
+            <form method="POST" action="/url">
+                        <label for="l">Give the original URL</label>
+                        <input type="text" name="originalURL" placeholder="https://www.google.com" class="form"
+                            class="input">
+                        <button type="submit" class="form">Generate</button>
+            </form>
+        </div>
+        <br><br>
+
+        <div class="small">
+
+            <% if (locals.urls) { %>
+                <table border="2">
+                    <thead>
+                        <th>Sr No</th>
+                        <th>originalURL</th>
+                        <th>ShortidURL</th>
+                        <th>VisitClicks</th>
+                    </thead>
+                    <tbody>
+
+                        <% urls.forEach((url,index)=> { %>
+                            <tr>
+                                <td>
+                                    <%= index+1 %>
+                                </td>
+                                <td>
+                                    <%= url.originalURL %>
+                                </td>
+                                <td>
+                                    <%= url.shortidURL %>
+                                </td>
+                                <td>
+                                    <%= url.visithistory.length %>
+                                </td>
+
+                                <% }) %>
+
+                            </tr>
+
+                    </tbody>
+                </table>
+                <% } %>
+        </div>
+    </div>
+</body>
+
+</html>
